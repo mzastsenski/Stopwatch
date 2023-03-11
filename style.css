@@ -1,0 +1,90 @@
+body {
+  background: #ffa600;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+    "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  height: 100%;
+}
+
+.wrapper {
+  margin: 40px auto;
+  color: #fff;
+  text-align: center;
+}
+
+h1,
+h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 100;
+  font-size: 28px;
+  letter-spacing: 1.2px;
+  margin: 0px;
+  font-style: italic;
+}
+p {
+  font-size: 21px;
+  margin: 15px;
+}
+
+#time {
+  font-size: 72px;
+  padding: 21px;
+  margin: 0;
+}
+button {
+  transition: 0.3s;
+  /* -moz-border-radius: 5px;
+  -webkit-border-radius: 5px; */
+  /* -khtml-border-radius: 5px; */
+  border-radius: 9px;
+  background: #ffa600;
+  color: #fff;
+  border: solid 1px #fff;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 15px 40px;
+  margin: 8px;
+  outline: none;
+}
+button:hover {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.2s;
+  background: #fff;
+  border: solid 1px #fff;
+  color: #ffa600;
+}
+#button-start {
+  border-radius: 50%;
+  font-weight: bold;
+  padding: 40px 30px;
+  margin: 0px;
+  margin-bottom: 18px;
+}
+#timer2 {
+  display: none;
+  justify-content: center;
+  text-align: center;
+}
+.round {
+  margin: 10px;
+  padding: 2px;
+  font-size: 28px;
+}
+.hide {
+  display: none;
+}
+@media (hover: none) {
+  button:hover {
+    background: inherit;
+    color: #fff;
+  }
+}
+@media (max-width: 500px) {
+  button {
+    padding: 16px 25px;
+  }
+  p {
+    font-size: 19px;
+  }
+}
