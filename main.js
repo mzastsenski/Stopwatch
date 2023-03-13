@@ -13,18 +13,20 @@ let mins = localStorage.mins ? localStorage.mins : "00";
 let seconds2 = localStorage.seconds2 ? localStorage.seconds2 : "00";
 let msec2 = localStorage.msec2 ? localStorage.msec2 : "00";
 let mins2 = localStorage.mins2 ? localStorage.mins2 : "00";
-let countRound = localStorage.countRound ? parseInt(localStorage.countRound) : 0;
+let countRound = localStorage.countRound
+  ? parseInt(localStorage.countRound)
+  : 0;
 let count = localStorage.count ? localStorage.count : 0;
 let stoped = localStorage.stoped ? localStorage.stoped : true;
 let interval;
-time.innerHTML = localStorage.time ? localStorage.time : "00:00:00"
-time2.innerHTML = localStorage.time2 ? localStorage.time2 : "00:00:00"
-round.innerHTML = localStorage.countRound ? `Round ${countRound + 1}:` : "Round 1:"
-results.innerHTML = localStorage.results ? localStorage.results  : null;
+time.innerHTML = localStorage.time ? localStorage.time : "00:00:00";
+time2.innerHTML = localStorage.time2 ? localStorage.time2 : "00:00:00";
+round.innerHTML = localStorage.countRound
+  ? `Round ${countRound + 1}:`
+  : "Round 1:";
+results.innerHTML = localStorage.results ? localStorage.results : null;
 
-document.querySelector(".wrapper").classList.remove("hide");
-
-if (stoped == 'false') {
+if (stoped == "false") {
   buttonStart.innerHTML = "Stop";
   timer2.style.display = "flex";
   interval = setInterval(startTimer, 10);
@@ -33,8 +35,8 @@ if (time2.innerHTML != "00:00:00") {
   timer2.style.display = "flex";
 }
 
-buttonStart.onclick = function () {
-  if (stoped == true || stoped == 'true') {
+buttonStart.addEventListener("click", () => {
+  if (stoped == true || stoped == "true") {
     clearInterval(interval);
     stoped = false;
     buttonStart.innerHTML = "Stop";
@@ -45,19 +47,19 @@ buttonStart.onclick = function () {
     stoped = true;
     buttonStart.innerHTML = "Start";
   }
-};
+});
 
-buttonSave.onclick = function () {
+buttonSave.addEventListener("click", () => {
   //if (!stoped) {
-  if (time.innerHTML != "00:00:00") {    
+  if (time.innerHTML != "00:00:00") {
     count++;
     let newTime = document.createElement("p");
     newTime.innerHTML = `${count}: &nbsp${mins}:${seconds}:${msec}`;
     // results.appendChild(newTime);
     results.insertBefore(newTime, results.firstElementChild);
   }
-};
-buttonRound.onclick = function () {
+});
+buttonRound.addEventListener("click", () => {
   if (time2.innerHTML != "00:00:00") {
     countRound++;
     let newRound = document.createElement("p");
@@ -68,9 +70,9 @@ buttonRound.onclick = function () {
     round.innerHTML = `Round  ${countRound + 1}:`;
     results.insertBefore(newRound, results.firstElementChild);
   }
-};
+});
 
-buttonReset.onclick = function () {
+buttonReset.addEventListener("click", () => {
   clearInterval(interval);
   msec = "00";
   seconds = "00";
@@ -87,8 +89,8 @@ buttonReset.onclick = function () {
   timer2.style.display = "none";
   time.innerHTML = `${mins}:${seconds}:${msec}`;
   time2.innerHTML = `${mins2}:${seconds2}:${msec2}`;
-  localStorage.clear()
-};
+  localStorage.clear();
+});
 
 function startTimer() {
   msec = parseInt(msec);
@@ -148,17 +150,17 @@ function startTimer() {
   time2.innerHTML = `${mins2}:${seconds2}:${msec2}`;
 }
 
-window.onunload = function () {
-  localStorage.setItem('time', time.innerHTML);
-  localStorage.setItem('time2', time2.innerHTML);
-  localStorage.setItem('results', results.innerHTML);
-  localStorage.setItem('mins', mins);
-  localStorage.setItem('seconds', seconds);
-  localStorage.setItem('msec', msec);
-  localStorage.setItem('mins2', mins2);
-  localStorage.setItem('seconds2', seconds2);
-  localStorage.setItem('msec2', msec2);
-  localStorage.setItem('countRound', countRound);
-  localStorage.setItem('count', count);
-  localStorage.setItem('stoped', stoped);
-}
+window.addEventListener("unload", () => {
+  localStorage.setItem("time", time.innerHTML);
+  localStorage.setItem("time2", time2.innerHTML);
+  localStorage.setItem("results", results.innerHTML);
+  localStorage.setItem("mins", mins);
+  localStorage.setItem("seconds", seconds);
+  localStorage.setItem("msec", msec);
+  localStorage.setItem("mins2", mins2);
+  localStorage.setItem("seconds2", seconds2);
+  localStorage.setItem("msec2", msec2);
+  localStorage.setItem("countRound", countRound);
+  localStorage.setItem("count", count);
+  localStorage.setItem("stoped", stoped);
+});

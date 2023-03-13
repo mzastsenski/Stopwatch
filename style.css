@@ -1,7 +1,7 @@
 body {
   background: #ffa600;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
-    "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
   height: 100%;
 }
 
@@ -32,9 +32,6 @@ p {
 }
 button {
   transition: 0.3s;
-  /* -moz-border-radius: 5px;
-  -webkit-border-radius: 5px; */
-  /* -khtml-border-radius: 5px; */
   border-radius: 9px;
   background: #ffa600;
   color: #fff;
@@ -70,9 +67,6 @@ button:hover {
   margin: 10px;
   padding: 2px;
   font-size: 28px;
-}
-.hide {
-  display: none;
 }
 @media (hover: none) {
   button:hover {
